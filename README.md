@@ -6,10 +6,10 @@
 ## 🖼️ Screenshots
 
 <div align="center">
-  <img src="img/obj.png" alt="Lexer Output" width="45%">
-  <img src="img/class.png" alt="AST Visualization" width="45%">
+  <img src="img/obj.png" alt="">
+  <img src="img/class.png" alt="" >
   
-  <img src="img/use-case.png" alt="Code Example" width="45%">
+  <img src="img/use-case.png" alt="">
 
 </div>
 
