@@ -9,3 +9,9 @@ char Lexer::currentChar() {
     if (pos >= length) return '\0';
     return input[pos];
 }
+
+char Lexer::peekAhead(size_t n) {
+    if (pos + n >= length) return '\0';
+    return input[pos + n];
+}
+
