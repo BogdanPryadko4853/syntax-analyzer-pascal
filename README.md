@@ -6,13 +6,11 @@
 ## 🖼️ Screenshots
 
 <div align="center">
-  <img src="img/screenshot1.png" alt="Lexer Output" width="45%">
-  <img src="img/screenshot2.png" alt="AST Visualization" width="45%">
+  <img src="img/obj.png" alt="Lexer Output" width="45%">
+  <img src="img/class.png" alt="AST Visualization" width="45%">
   
-  <img src="img/screenshot3.png" alt="Code Example" width="45%">
-  <img src="img/screenshot4.png" alt="Error Handling" width="45%">
-  
-  <img src="img/screenshot5.png" alt="Project Structure" width="90%">
+  <img src="img/use-case.png" alt="Code Example" width="45%">
+
 </div>
 
 ## 🛠️ Technologies
