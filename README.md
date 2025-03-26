@@ -75,12 +75,14 @@ begin
 end.
 ```
 ##Выходные данные
+```
 Лексический анализ завершён. Токены:
 const eps = 0.0001 ; var a , b : real ; begin write ( Введите числа a и b (a<b):  ) ; readln ( a , b ) ; assert ( a < b
 ) ; var fa := sin ( a ) ; var fb := sin ( b ) ; assert ( fb * fa < 0 ) ; while ( b - a ) > eps do begin var x := ( b + a
  ) / 2 ; var fx := sin ( x ) ; if fa * fx <= 0 then b := x ; else begin a := x ; fa := fx ; end ; end ; writeln ( Корень
  функции на [a,b] равен  , ( b + a ) / 2 ) ; end .
 -----------------------
+```
 Дерево разбора:
 ```
 Program
