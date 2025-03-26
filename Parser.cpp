@@ -24,3 +24,12 @@ Token Parser::consume(TokenType expected, const std::string& errorMessage) {
 
     throw std::runtime_error(oss.str());
 }
+
+bool Parser::match(TokenType type) {
+    if (currentToken().type == type) {
+        current++;
+        return true;
+    }
+    return false;
+}
+
