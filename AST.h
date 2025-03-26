@@ -22,7 +22,8 @@ enum class ASTNodeType {
     Expression,
     Term,
     Factor,
-    Unknown
+    Unknown,
+    END
 };
 
 struct ASTNode {
