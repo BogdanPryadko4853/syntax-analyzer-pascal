@@ -13,6 +13,35 @@
   - Ввод/вывод (`readln`, `writeln`)
   - Локальные переменные с инициализацией (`var x := value`)
   - Арифметические и логические выражения
+  - 
+## 🖼️ Screenshots
+
+<div align="center">
+  <img src="img/ob.png" alt="">
+  <img src="img/usc.png" alt="" >
+  
+  <img src="img/cl.png" alt="">
+
+</div>
+
+## 🛠️ Technologies
+- **Language**: C++20
+- **Build System**: CMake
+- **Key Components**:
+  - `Lexer.h/cpp` - Token generation
+  - `Parser.h/cpp` - Syntax analysis
+  - `AST.h` - Abstract Syntax Tree
+  - `BoundedDeque.h` - Utility container
+
+## 🚀 Getting Started
+```bash
+git clone https://github.com/BogdanPryadko4853/syntax-analyzer-pascal.git
+cd syntax-analyzer-pascal
+mkdir build && cd build
+cmake .. && cmake --build .
+./syntax-analyzer-pascal
+```
+
 
 ## 📋 Пример работы
 
@@ -44,7 +73,7 @@ begin
 
   writeln('Корень функции на [a,b] равен ',(b+a)/2);
 end.
-
+```
 ##Выходные данные
 Лексический анализ завершён. Токены:
 const eps = 0.0001 ; var a , b : real ; begin write ( Введите числа a и b (a<b):  ) ; readln ( a , b ) ; assert ( a < b
@@ -53,6 +82,7 @@ const eps = 0.0001 ; var a , b : real ; begin write ( Введите числа 
  функции на [a,b] равен  , ( b + a ) / 2 ) ; end .
 -----------------------
 Дерево разбора:
+```
 Program
   Block
     ConstDecl:
@@ -103,31 +133,3 @@ Program
       ProcedureCall: writeln
 
 Process finished with exit code 0
-
-
-## 🖼️ Screenshots
-
-<div align="center">
-  <img src="img/ob.png" alt="">
-  <img src="img/usc.png" alt="" >
-  
-  <img src="img/cl.png" alt="">
-
-</div>
-
-## 🛠️ Technologies
-- **Language**: C++20
-- **Build System**: CMake
-- **Key Components**:
-  - `Lexer.h/cpp` - Token generation
-  - `Parser.h/cpp` - Syntax analysis
-  - `AST.h` - Abstract Syntax Tree
-  - `BoundedDeque.h` - Utility container
-
-## 🚀 Getting Started
-```bash
-git clone https://github.com/BogdanPryadko4853/syntax-analyzer-pascal.git
-cd syntax-analyzer-pascal
-mkdir build && cd build
-cmake .. && cmake --build .
-./syntax-analyzer-pascal
