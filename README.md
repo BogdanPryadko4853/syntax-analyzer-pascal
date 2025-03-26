@@ -6,10 +6,10 @@
 ## 🖼️ Screenshots
 
 <div align="center">
-  <img src="img/obj.png" alt="">
-  <img src="img/class.png" alt="" >
+  <img src="img/ob.png" alt="">
+  <img src="img/usc.png" alt="" >
   
-  <img src="img/use-case.png" alt="">
+  <img src="img/cl.png" alt="">
 
 </div>
 
