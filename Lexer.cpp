@@ -79,3 +79,96 @@ Token Lexer::identifier() {
 
     return Token(TokenType::IDENT, idStr, 0.0, line);
 }
+
+Token Lexer::getNextToken() {
+    skipWhitespace();
+
+    size_t line = currentLine;
+
+    if (pos >= length) {
+        return Token(TokenType::END_OF_FILE, "", 0.0, line);
+    }
+
+    char c = currentChar();
+
+    if (c == '\'') {
+        advance();
+        size_t start = pos;
+        while (currentChar() != '\'' && currentChar() != '\0') {
+            advance();
+        }
+        std::string strVal = input.substr(start, pos - start);
+        if (currentChar() == '\'') {
+            advance();
+        }
+        return Token(TokenType::STRING_LITERAL, strVal, 0.0, line);
+    }
+
+    if (std::isdigit(c)) {
+        return number();
+    }
+
+    if (std::isalpha(c) || c == '_') {
+        return identifier();
+    }
+
+    if (c == '<') {
+        advance();
+        if (currentChar() == '=') {
+            advance();
+            return Token(TokenType::LE, "<=", 0.0, line);
+        } else if (currentChar() == '>') {
+            advance();
+            return Token(TokenType::NE, "<>", 0.0, line);
+        } else {
+            return Token(TokenType::LT, "<", 0.0, line);
+        }
+    }
+    if (c == '>') {
+        advance();
+        if (currentChar() == '=') {
+            advance();
+            return Token(TokenType::GE, ">=", 0.0, line);
+        } else {
+            return Token(TokenType::GT, ">", 0.0, line);
+        }
+    }
+    if (c == ':') {
+        advance();
+        if (currentChar() == '=') {
+            advance();
+            return Token(TokenType::ASSIGN, ":=", 0.0, line);
+        } else {
+            return Token(TokenType::COLON, ":", 0.0, line);
+        }
+    }
+
+    switch(c) {
+        case '+': advance(); return Token(TokenType::PLUS, "+", 0.0, line);
+        case '-': advance(); return Token(TokenType::MINUS, "-", 0.0, line);
+        case '*': advance(); return Token(TokenType::TIMES, "*", 0.0, line);
+        case '/': advance(); return Token(TokenType::DIVIDE, "/", 0.0, line);
+        case '=': advance(); return Token(TokenType::EQ, "=", 0.0, line);
+        case '(': advance(); return Token(TokenType::LPAREN, "(", 0.0, line);
+        case ')': advance(); return Token(TokenType::RPAREN, ")", 0.0, line);
+        case '{': advance(); return Token(TokenType::LBRACE, "{", 0.0, line);
+        case '}': advance(); return Token(TokenType::RBRACE, "}", 0.0, line);
+        case ',': advance(); return Token(TokenType::COMMA, ",", 0.0, line);
+        case ';': advance(); return Token(TokenType::SEMI, ";", 0.0, line);
+        case '.': advance(); return Token(TokenType::DOT, ".", 0.0, line);
+        default:
+            advance();
+            return Token(TokenType::UNKNOWN, std::string(1, c), 0.0, line);
+    }
+}
+
+std::vector<Token> Lexer::tokenize() {
+    std::vector<Token> tokens;
+    Token token = getNextToken();
+    while (token.type != TokenType::END_OF_FILE) {
+        tokens.push_back(token);
+        token = getNextToken();
+    }
+    tokens.push_back(token);
+    return tokens;
+}
