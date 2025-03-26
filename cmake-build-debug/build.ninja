@@ -61,6 +61,12 @@ build CMakeFiles/syntax_analyzer.dir/Lexer.cpp.obj: CXX_COMPILER__syntax_analyze
   OBJECT_DIR = CMakeFiles\syntax_analyzer.dir
   OBJECT_FILE_DIR = CMakeFiles\syntax_analyzer.dir
 
+build CMakeFiles/syntax_analyzer.dir/Parser.cpp.obj: CXX_COMPILER__syntax_analyzer_unscanned_Debug C$:/Univer/syntax-analyzer/Parser.cpp || cmake_object_order_depends_target_syntax_analyzer
+  DEP_FILE = CMakeFiles\syntax_analyzer.dir\Parser.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\syntax_analyzer.dir
+  OBJECT_FILE_DIR = CMakeFiles\syntax_analyzer.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target syntax_analyzer
@@ -69,7 +75,7 @@ build CMakeFiles/syntax_analyzer.dir/Lexer.cpp.obj: CXX_COMPILER__syntax_analyze
 #############################################
 # Link the executable syntax_analyzer.exe
 
-build syntax_analyzer.exe: CXX_EXECUTABLE_LINKER__syntax_analyzer_Debug CMakeFiles/syntax_analyzer.dir/main.cpp.obj CMakeFiles/syntax_analyzer.dir/Lexer.cpp.obj
+build syntax_analyzer.exe: CXX_EXECUTABLE_LINKER__syntax_analyzer_Debug CMakeFiles/syntax_analyzer.dir/main.cpp.obj CMakeFiles/syntax_analyzer.dir/Lexer.cpp.obj CMakeFiles/syntax_analyzer.dir/Parser.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\syntax_analyzer.dir
