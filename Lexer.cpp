@@ -15,3 +15,36 @@ char Lexer::peekAhead(size_t n) {
     return input[pos + n];
 }
 
+void Lexer::advance() {
+    if (currentChar() == '\n') {
+        currentLine++;
+    }
+    if (!lookaheadBuffer.empty()) {
+        lookaheadBuffer.pop_front();
+    }
+    pos++;
+}
+
+void Lexer::skipWhitespace() {
+    while (std::isspace(currentChar())) {
+        advance();
+    }
+}
+
+Token Lexer::number() {
+    size_t line = currentLine;
+    size_t start = pos;
+    bool hasDot = false;
+
+    while (std::isdigit(currentChar()) || currentChar() == '.') {
+        if (currentChar() == '.') {
+            if (hasDot) break;
+            hasDot = true;
+        }
+        advance();
+    }
+
+    std::string numStr = input.substr(start, pos - start);
+    double value = std::stod(numStr);
+    return Token(TokenType::NUMBER, numStr, value, line);
+}
