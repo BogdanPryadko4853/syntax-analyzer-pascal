@@ -8,4 +8,6 @@ add_executable(syntax_analyzer main.cpp
         Lexer.cpp
         AST.h
         BoundedDeque.h
+        Parser.cpp
+        Parser.h
 )
