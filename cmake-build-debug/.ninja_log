@@ -1,5 +1,8 @@
 # ninja log v6
-10	496	7646739713697748	build.ninja	76a3c3f700e7b4bc
+10	496	7646758817442040	build.ninja	76a3c3f700e7b4bc
+706	930	7646739722401650	syntax_analyzer.exe	ca75896aba02fbff
 41	141	7646739715749826	CMakeFiles/syntax_analyzer.dir/main.cpp.obj	504f88d8096916cb
 46	705	7646739715799643	CMakeFiles/syntax_analyzer.dir/Lexer.cpp.obj	73aceae7205f4ee
-706	930	7646739722401650	syntax_analyzer.exe	ca75896aba02fbff
+27	392	7646758817442040	build.ninja	76a3c3f700e7b4bc
+57	774	7646758819207837	CMakeFiles/syntax_analyzer.dir/Lexer.cpp.obj	73aceae7205f4ee
+775	906	7646758826384764	syntax_analyzer.exe	ca75896aba02fbff
