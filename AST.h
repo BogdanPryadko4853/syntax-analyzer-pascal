@@ -2,6 +2,7 @@
 #define AST_H
 
 #include <string>
+#include <utility>
 #include <vector>
 #include <memory>
 #include <iostream>
@@ -29,8 +30,8 @@ struct ASTNode {
     std::string value;
     std::vector<std::shared_ptr<ASTNode>> children;
 
-    ASTNode(ASTNodeType type, const std::string &value = "")
-            : type(type), value(value) {}
+    ASTNode(ASTNodeType type, std::string value = "")
+            : type(type), value(std::move(value)) {}
 
     void addChild(const std::shared_ptr<ASTNode> &child) {
         children.push_back(child);
